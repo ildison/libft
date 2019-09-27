@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 01:46:18 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/15 01:46:59 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/09/27 13:51:55 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strnlen(const char *str, int n)
+size_t			ft_strnlen(const char *str, int n)
 {
-	size_t len;
+	const char	*l;
 
-	len = 0;
+	l = str;
 	if (str)
 	{
-		while (*str && *str++ != n)
-			len++;
+		while (*l && *l != n)
+			l++;
 	}
-	return (len);
+	return (l - str);
 }
